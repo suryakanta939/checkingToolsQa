@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Failed suite [Suite]" parallel="tests">
+  <parameter name="browser" value="firefox"/>
+  <test name="Test on firefox(failed)" parallel="tests">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.toolQa.testCasess.RegistrationTest">
+        <methods>
+          <include name="executeAfterMethod"/>
+          <include name="executeAfterMethod"/>
+          <include name="excuteBeformethod"/>
+          <include name="excuteBeformethod"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="f"/>
+        </methods>
+      </class> <!-- com.toolQa.testCasess.RegistrationTest -->
+      <class name="com.toolQa.testCasess.SwitchWindowTest">
+        <methods>
+          <include name="handelingBrowserWindow"/>
+          <include name="handelingMessageWindow"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.toolQa.testCasess.SwitchWindowTest -->
+    </classes>
+  </test> <!-- Test on firefox(failed) -->
+  <test name="Test on chrome(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.toolQa.testCasess.RegistrationTest">
+        <methods>
+          <include name="executeAfterMethod"/>
+          <include name="executeAfterMethod"/>
+          <include name="excuteBeformethod"/>
+          <include name="excuteBeformethod"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.toolQa.testCasess.RegistrationTest -->
+      <class name="com.toolQa.testCasess.SwitchWindowTest">
+        <methods>
+          <include name="handelingBrowserWindow"/>
+          <include name="handelingMessageWindow"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.toolQa.testCasess.SwitchWindowTest -->
+    </classes>
+  </test> <!-- Test on chrome(failed) -->
+</suite> <!-- Failed suite [Suite] -->
