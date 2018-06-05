@@ -47,26 +47,28 @@ public class ReadingData {
   
 @DataProvider
   public Object[][] getdata() throws EncryptedDocumentException, InvalidFormatException, IOException{
-	  DataFormatter formatter=new DataFormatter();
-	  File f=new File("TestData");
-		File fs=new File(f,"dataSheet.xlsx");
-		FileInputStream fis=new FileInputStream(fs.getAbsolutePath());
-		Workbook wb=WorkbookFactory.create(fis);
-		Sheet sh=wb.getSheet("Details");
-		int rowNo=sh.getLastRowNum();
-		Object[][] obj=new Object[rowNo+1][8];
-		for(int i=1;i<rowNo+1;i++){
-			Row rw=sh.getRow(i);
-			if(rw==null){
-				
-			}else{
-				for(int j=0;j<8;j++){
-					String data=formatter.formatCellValue(rw.getCell(j));
-					obj[i][j]=data;
-			}	
-			}
-				
-		}
-		return obj;
+//	  DataFormatter formatter=new DataFormatter();
+//	  File f=new File("TestData");
+//		File fs=new File(f,"dataSheet.xlsx");
+//		FileInputStream fis=new FileInputStream(fs.getAbsolutePath());
+//		Workbook wb=WorkbookFactory.create(fis);
+//		Sheet sh=wb.getSheet("Details");
+//		int rowNo=sh.getLastRowNum();
+//		Object[][] obj=new Object[7][8];
+//		for(int i=1;i<8;i++){
+//			Row rw=sh.getRow(i);
+//			if(rw==null){
+//				
+//			}else{
+//				for(int j=0;j<8;j++){
+//					String data=formatter.formatCellValue(rw.getCell(j));
+//					obj[i][j]=data;
+//			}	
+//			}
+//				
+//		}
+//		return obj;
+	   Object[][] data=ReadDataFromExcel.readData();
+	return data;
   }
 }

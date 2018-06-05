@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.toolQa.testCasess.CompreTwoExcelFiles">
+      <class name="com.toolQa.testCasess.ClickOnFilpkart">
         <methods>
-          <include name="comaringexcel"/>
+          <include name="clcikOnLink"/>
         </methods>
-      </class> <!-- com.toolQa.testCasess.CompreTwoExcelFiles -->
+      </class> <!-- com.toolQa.testCasess.ClickOnFilpkart -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

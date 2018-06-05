@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -39,4 +40,29 @@ public class ReadDataFromExcel {
 		 int data=(int) rw.getCell(columnNo).getNumericCellValue();
 		 return data;
 	}
-}
+	
+	public static Object[][] readData() throws EncryptedDocumentException, InvalidFormatException, IOException{
+		  DataFormatter formatter=new DataFormatter();
+		  File f=new File("TestData");
+			File fs=new File(f,"dataSheet.xlsx");
+			FileInputStream fis=new FileInputStream(fs.getAbsolutePath());
+			Workbook wb=WorkbookFactory.create(fis);
+			Sheet sh=wb.getSheet("Details");
+			int rowNo=sh.getLastRowNum();
+			Object[][] obj=new Object[7][8];
+			for(int i=1;i<8;i++){
+				Row rw=sh.getRow(i);
+				if(rw==null){
+					
+				}else{
+					for(int j=0;j<8;j++){
+						String data=formatter.formatCellValue(rw.getCell(j));
+						obj[i][j]=data;
+				}	
+				}
+					
+			}
+			return obj;
+	  }
+	}
+
